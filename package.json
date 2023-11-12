@@ -1,9 +1,9 @@
 {
-    "name": "vscode-rusty-onedark",
-    "displayName": "Rusty One Dark",
-    "description": "One Dark Theme based on Atom, but with Rust semantic highlighting!",
-    "version": "1.0.3",
-    "publisher": "Jeraldson",
+    "name": "vscode-rusty-colors",
+    "displayName": "Rusty Colors",
+    "description": "Dark theme inspired by old rusty factories, perfect to use with Rust language",
+    "version": "1.0.0",
+    "publisher": "IoaNN_UwU",
     "license": "MIT",
     "galleryBanner": {
         "color": "#282C34",
@@ -25,15 +25,15 @@
     "contributes": {
         "themes": [
             {
-                "label": "Rusty One Dark",
+                "label": "Rusty Colors",
                 "uiTheme": "vs-dark",
                 "path": "./themes/RustyOneDark.json"
             }
         ]
     },
-    "homepage": "https://github.com/Jerald/rusty-onedark",
+    "homepage": "https://github.com/IoaNNUwU/rusty-colors",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Jerald/rusty-onedark"
+        "url": "https://github.com/IoaNNUwU/rusty-colors"
     }
 }

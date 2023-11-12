@@ -1,20 +1,6 @@
-**Please provide as much information as possible, usually I need these information to actually start working on an issue, so try to fill as much of these as possible**
+**Please describe your issue**
 
-## Sample code
-
-```
-[Please provide a code snippet so I can test]
-```
-
-## Filename and Language selected
-
-[Please tell us which file extension are you editing and which language VSCode is using for this file]
-
-## Atom Original theme Screenshot
-
-[Screenshot of your code inside Atom, under same conditions, showing how the coloring should look]
-
-## VSCode theme Screenshot
+## Screenshot
 
 [VSCode screeshot showing how the coloring is]
 

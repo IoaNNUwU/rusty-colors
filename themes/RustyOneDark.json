@@ -33,7 +33,7 @@
         "editorWidget.background": "#21252B",
         "input.background": "#1B1D23",
         "input.border": "#181A1F",
-        "focusBorder": "#528BFF",
+        "focusBorder": "#9a9a9ab4",
         "list.activeSelectionBackground": "#2C313A",
         "list.activeSelectionForeground": "#D7DAE0",
         "list.focusBackground": "#2C313A",
@@ -42,7 +42,7 @@
         "list.inactiveSelectionBackground": "#2C313A",
         "list.inactiveSelectionForeground": "#D7DAE0",
         "notification.background": "#21252B",
-        "pickerGroup.border": "#528BFF",
+        "pickerGroup.border": "#9a9a9ab4",
         "scrollbarSlider.background": "#4E566680",
         "scrollbarSlider.activeBackground": "#747D9180",
         "scrollbarSlider.hoverBackground": "#5A637580",
@@ -62,9 +62,9 @@
         "statusBar.debuggingForeground": "#FFFFFF",
         "extensionButton.prominentBackground": "#2BA143",
         "extensionButton.prominentHoverBackground": "#37AF4E",
-        "badge.background": "#528BFF",
-        "badge.foreground": "#D7DAE0",
-        "peekView.border": "#528BFF",
+        "badge.background": "#9a9a9ab4",
+        "badge.foreground": "#2451a5b4",
+        "peekView.border": "#9a9a9ab4",
         "peekViewResult.background": "#21252B",
         "peekViewResult.selectionBackground": "#2C313A",
         "peekViewTitle.background": "#1B1D23",
@@ -77,7 +77,7 @@
                 "comment"
             ],
             "settings": {
-                "foreground": "#5C6370",
+                "foreground": "#57a563",
                 "fontStyle": ""
             }
         },
@@ -87,7 +87,7 @@
                 "comment markup.link"
             ],
             "settings": {
-                "foreground": "#5C6370"
+                "foreground": "#25a42c"
             }
         },
         {
@@ -96,7 +96,7 @@
                 "entity.name.type"
             ],
             "settings": {
-                "foreground": "#E5C07B"
+                "foreground": "#e57d7b"
             }
         },
         {
@@ -105,7 +105,7 @@
                 "entity.other.inherited-class"
             ],
             "settings": {
-                "foreground": "#98C379"
+                "foreground": "#c37979"
             }
         },
         {
@@ -114,7 +114,7 @@
                 "keyword"
             ],
             "settings": {
-                "foreground": "#C678DD"
+                "foreground": "#ddb878"
             }
         },
         {
@@ -1739,30 +1739,50 @@
     ],
 
     "semanticTokenColors": {
-        "attribute:rust": "#BCC199",
-        "function.attribute:rust": "#BCC199",
-        "*.attribute:rust": "#BCC199",
-        
-        "keyword:rust": "#C678DD",
-        "keyword.unsafe:rust": "#E06C75",
 
-        "namespace:rust": "#BCC199",
+        "formatSpecifier": "#c08181",
 
-        "interface:rust": "#56B6C2",
+        "keyword": "#d9a958",
+        "keyword.unsafe": "#E06C75",
 
-        "lifetime:rust": "#33E8EC",
-        "builtinType:rust": "#C678DD",
+        "namespace": "#cdd39f",
 
-        "type:rust": "#E5C07B",
-        "struct:rust":"#E5C07B",
-        "enum:rust": "#E5C07B",
-        
-        "function:rust": "#61AFEF",
-        
-        "property:rust": "#61AFEF",
-        "member:rust": "#61AFEF",
-        "enumMember:rust": "#D19A66",
+        "number": "#69b6ba",
 
-        "variable:rust": "#BBBBBB",
+        "operator": "#d3d3d3",
+
+        "type": "#dd8778",
+        "builtinType": "#e06a55",
+        "struct":"#e27a67",
+        "class": "#e68472",
+
+        "interface": "#78c371",
+
+        "enum": "#e6cd72",
+        "enumMember": "#edd4a3",
+
+        "function": "#7fccd1",
+        "macro": "#5e91ff",
+        "method": "#83c0e0",
+
+        "attribute": "#d4d4d4",
+        "*.attribute": "#d4d4d4",
+
+        "property": "#95acbd",
+
+        "variable": "#BBBBBB",
+
+        "lifetime": "#798fde",
+
+        "function.async": "#b898cf",
+        "keyword.async": "#bb85e1",
+
+        "*.mutable": { "fontStyle": "underline" },
+
+        "selfKeyword": "#5e91ff",
+
+        "regexp": { "color": "#D19A66", "fontStyle": "bold" },
+
+        "type.defaultLibrary": { "fontStyle": "italic" }
     }
 }
