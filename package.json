@@ -27,7 +27,7 @@
             {
                 "label": "Rusty Colors",
                 "uiTheme": "vs-dark",
-                "path": "./themes/RustyOneDark.json"
+                "path": "./themes/RustyColors.json"
             }
         ]
     },

@@ -1,6 +1,8 @@
 # Rusty Colors
 
-TODO
+Dark VSCode theme inspired by calming rusty colors.
+
+This theme is a perfect fit for Rust language.
 
 ## Customization
 
