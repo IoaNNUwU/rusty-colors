@@ -6,21 +6,23 @@
     "publisher": "IoaNN_UwU",
     "license": "MIT",
     "galleryBanner": {
-        "color": "#282C34",
+        "color": "#283946",
         "theme": "dark"
 	},
     "engines": {
        "vscode": "^1.43.0"
     },
     "categories": [
-    "Themes"
+        "Themes"
     ],
     "keywords": [
         "atom",
         "theme",
         "dark",
+        "light",
         "one dark",
-        "rust"
+        "rust",
+        "color"
     ],
     "contributes": {
         "themes": [
@@ -28,6 +30,11 @@
                 "label": "Rusty Colors",
                 "uiTheme": "vs-dark",
                 "path": "./themes/RustyColors.json"
+            },
+            {
+                "label": "Rusty Colors Light",
+                "uiTheme": "vs",
+                "path": "./themes/RustyColorsLight.json"
             }
         ]
     },
