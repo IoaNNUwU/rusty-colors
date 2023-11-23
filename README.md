@@ -8,7 +8,8 @@ Dark VSCode theme inspired by calming rusty colors.
 - Includes 1 `Dark` & 1 `Light` theme.
 - Partially supports `C++`. Partially supports other languages. You can request support or implement it at [GitHub](https://github.com/IoaNNUwU/rusty-colors.git).
 
-![Example.png](https://github.com/IoaNNUwU/rusty-colors/blob/master/img/Example.png)
+
+![Preview](https://raw.githubusercontent.com/IoaNNUwU/rusty-colors/master/img/Example.png)
 
 ## Customization
 
