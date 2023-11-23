@@ -93,6 +93,8 @@
                 "punctuation.definition.parameters",
                 "keyword.operator.arithmetic.cpp",
                 "meta.block.cpp",
+                // JS(TS)
+                "punctuation.accessor"
             ],
             "settings": {
                 "foreground": "#bbb",
@@ -111,6 +113,7 @@
                 "entity.name.type.numeric",
                 "entity.name.type.primitive",
                 "keyword.operator.borrow",
+                "storage.modifier.mut.rust",
                 // C++
                 "keyword.control.cpp",
                 "storage.modifier.reference.cpp",
@@ -119,8 +122,12 @@
                 "punctuation.terminator",
                 "keyword.control",
                 "constant.language",
-                "keyword.operator.arithmetic.cpp",
-                "keyword.operator.bitwise.shift.cpp"
+                // C++ & JS
+                "keyword.operator.arithmetic",
+                "keyword.operator.bitwise",
+                // JS(TS)
+                "keyword.operator.",
+                "support.type.primitive.ts",
             ],
             "settings": {
                 "foreground": "#d9a958"
@@ -156,13 +163,23 @@
                 "meta.function.definition",
                 // C++
                 "entity.name.function.definition.cpp",
+                // JS(TS)
+                "meta.definition.function",
+                "meta.definition.method",
+                "entity.name.tag",
+                // TOML
+                "support.type.property-name.table.toml"
             ],
             "settings": {
                 "foreground": "#de8373",
             }
         },
         {
-            "scope": "constant.numeric.decimal",
+            "scope": [
+                "constant.numeric.decimal",
+                // JSON
+                "constant.numeric",
+            ],
             "settings": {
                 "foreground": "#69b6ba"
             }
@@ -178,7 +195,7 @@
                 "entity.name.namespace",
                 // C++
                 "string.quoted.other.lt-gt.include.cpp",
-                "meta.preprocessor.include.cpp"
+                "meta.preprocessor.include.cpp",
             ],
             "settings": {
                 "foreground": "#70a9b9"
@@ -198,6 +215,8 @@
                 // C++
                 "entity.name.function.call",
                 "entity.name.function.member.cpp",
+                // JS(TS)
+                "meta.function-call"
             ],
             "settings": {
                 "foreground": "#74c9e0",
@@ -225,6 +244,30 @@
                 "foreground": "#7b97d2"
             }
         },
+        {
+            "scope": [
+                // JS(TS)
+                "variable.other.property",
+                "support.variable.property",
+                "entity.other.attribute-name",
+                // JSON
+                "support.type.property-name.json",
+                // TOML
+                "support.type.property-name.toml"
+            ],
+            "settings": {
+                "foreground": "#95acbd"
+            }
+        },
+        {
+            "scope": [
+                // JS(TS)
+                "variable.language.this.tsx",
+            ],
+            "settings": {
+                "foreground": "#91a4d0"
+            }
+        },
     ],
     "semanticTokenColors": {
         "formatSpecifier": "#e2d49c",
@@ -240,9 +283,6 @@
         "function.async": "#b898cf",
         "keyword.async": "#bb85e1",
         "typeParameter": "#57bdbb",
-        "*.mutable": {
-            "fontStyle": "underline"
-        },
         "typeAlias": "#de8373",
         "selfKeyword": "#91a4d0",
         "selfTypeKeyword": "#91a4d0",
@@ -250,5 +290,24 @@
             "color": "#D19A66",
             "fontStyle": "bold"
         },
+        "tomlTableKey": "#95acbd",
+        "tomlArrayKey": "#95acbd",
+
+        "*.mutable": {
+            "fontStyle": "underline"
+        },
+
+        "function.injected": "#74c9e0",
+        "struct.injected": "#de8373",
+        "namespace.injected": "#70a9b9",
+        "macro.injected": "#6797ff",
+        "string.injected": "#c2915f",
+        "keyword.injected": "#d9a958",
+        "comment.injected": "#5fc26e",
+        "enumMember.injected": "#91a4d0",
+        "enum.injected": "#6ec0d9",
+        "typeAlias.injected": "#6ec0d9",
+
+        "*.injected": "#bbb"
     }
 }

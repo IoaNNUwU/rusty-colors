@@ -1,19 +1,69 @@
 # Rusty Colors
 
-Dark VSCode theme inspired by calming rusty colors.
+VSCode theme consisting of calming soft colors. Main colors are inspired by Rusty Copper environments and include `Light Brown`, `Soft Red`, `Rusty Blue`, `Light Gray`.
 
 > This theme is a perfect fit for Rust language.
 
-- Includes semantic highlighting & full support for `Rust Language`.
+- Includes semantic highlighting & full support for `Rust`, `C++`, `JavaScript`, `TypeScript` and other languages listed below.
 - Includes 1 `Dark` & 1 `Light` theme.
-- Partially supports `C++`. Partially supports other languages. You can request support or implement it at [GitHub](https://github.com/IoaNNUwU/rusty-colors.git).
-
 
 ![Preview](https://raw.githubusercontent.com/IoaNNUwU/rusty-colors/master/img/Example.png)
 
+Each language in this list has hand-crafted, fine-tuned support. Each language uses same colors for same things (functions, structs, keywords, etc. each have same color in each language).
+- Rust
+- C++
+- JavaScript
+- TypeScript
+- JSON
+- TOML
+- HTML
+
 ## Customization
 
-If you are using VSCode 1.12+ versions you can customize the colors to your liking, overriding the ones provided by this theme. More info [here](https://code.visualstudio.com/docs/getstarted/theme-color-reference).
+If you are using VSCode 1.12+ versions you can customize the colors to your liking, overriding the ones provided by this theme.
+
+To do so, open command palette and type `Open User Settings (JSON)`. In this file you can override colors of this theme by adding this at the end of your settings object:
+
+```json
+// file: settings.json
+{
+    // your settings
+
+    "editor.tokenColorCustomizations": {
+        "[Rusty Colors]": {
+            "textMateRules": [
+                // put textMateRules here, for example:
+                {
+                    "scope": "string.quoted",
+                    "settings": { "foreground": "#5fc26e" }
+                }
+            ]
+        }
+    }
+}
+```
+
+Some useful textMateRules overrides you might like:
+```json
+// Make Strings green like comments (default strings are brown):
+{
+    "scope": "string.quoted",
+    "settings": { "foreground": "#5fc26e" }
+}
+
+// Make all punktuation & parenthesis bras
+{ 
+    "scope": [ 
+        "punctuation.brackets.round", "punctuation", 
+        "punctuation.brackets.angle", "punctuation.brackets.curly"
+    ], 
+    "settings": { "foreground": "#d9a958" }
+}
+```
+
+More info [here](https://code.visualstudio.com/docs/getstarted/theme-color-reference).
+
+
 
 ## Credits
 
