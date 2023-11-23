@@ -12,4 +12,4 @@
 ## Extra information
 
 [Any other information that might be useful]  
-[Are you using a Plugin? Some languages (like Rust) require a plugin from the Marketplace to work on VSCode, please tell us if you are using any plugins that can be affecting the way VSCode renders your code]
+[Are you using a Plugin? Some languages (like Rust) require a plugin from the Marketplace to work on VSCode, please tell if you are using any plugins that can be affecting the way VSCode renders your code]
