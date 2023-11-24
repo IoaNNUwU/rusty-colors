@@ -12,11 +12,8 @@ VSCode theme consisting of calming soft colors. Main colors are inspired by Rust
 Each language in this list has hand-crafted, fine-tuned support. Each language uses same colors for same things (functions, structs, keywords, etc. each have same color in each language).
 - Rust
 - C++
-- JavaScript
-- TypeScript
-- JSON
-- TOML
-- HTML
+- JavaScript, TypeScript
+- JSON, TOML, HTML, MARKDOWN, XML
 
 ## Customization
 
