@@ -21,7 +21,7 @@ If you are using VSCode 1.12+ versions you can customize the colors to your liki
 
 To do so, open command palette and type `Open User Settings (JSON)`. In this file you can override colors of this theme by adding this at the end of your settings object:
 
-```json
+```js
 // file: settings.json
 {
     // your settings
@@ -41,7 +41,7 @@ To do so, open command palette and type `Open User Settings (JSON)`. In this fil
 ```
 
 Some useful textMateRules overrides you might like:
-```json
+```js
 // Make Strings green like comments (default strings are brown):
 {
     "scope": "string.quoted",
