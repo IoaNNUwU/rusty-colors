@@ -5,7 +5,6 @@ VSCode theme consisting of calming soft colors. Main colors are inspired by Rust
 > This theme is a perfect fit for Rust language.
 
 - Includes semantic highlighting & full support for `Rust`, `C++`, `JavaScript`, `TypeScript` and other languages listed below.
-- Includes 1 `Dark` & 1 `Light` theme.
 
 ![Preview](https://raw.githubusercontent.com/IoaNNUwU/rusty-colors/master/img/Example.png)
 
@@ -59,7 +58,6 @@ Some useful textMateRules overrides you might like:
 ```
 
 More info [here](https://code.visualstudio.com/docs/getstarted/theme-color-reference).
-
 
 
 ## Credits

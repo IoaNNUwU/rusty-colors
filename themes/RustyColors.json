@@ -17,7 +17,7 @@
         "editor.background": "#282C34",
         "editor.lineHighlightBackground": "#2C313A",
         "editor.selectionBackground": "#3E4451",
-        "editorCursor.foreground": "#528BFF",
+        "editorCursor.foreground": "#dfdfdf",
         "editorGroup.emptyBackground": "#21252B",
         "editorGroup.border": "#181A1F",
         "editorGroupHeader.tabsBackground": "#21252B",
@@ -70,6 +70,10 @@
     },
     "tokenColors": [
         {
+            // main text color
+            // - local variables
+            // - common syntax {},()
+            // - function arguments
             "scope": [
                 "source",
                 "punctuation.brackets.round",
@@ -100,6 +104,11 @@
             }
         },
         {
+            // main keyword color
+            // - keywords
+            // - important punctuation ;
+            // - important operators + - = <
+            // - pointers & *
             "scope": [
                 "storage.type",
                 "keyword.other",
@@ -113,14 +122,21 @@
                 "entity.name.type.primitive",
                 "keyword.operator.borrow",
                 "storage.modifier.mut.rust",
+                // string escape characters
+                "constant.character.escape",
+                "string.quoted.byte.raw.rust",
+                "punctuation.section.embedded.rust",
                 // C++
                 "keyword.control.cpp",
+                "variable.language.this.cpp",
                 "storage.modifier.reference.cpp",
                 "keyword.operator.bitwise.cpp",
                 "storage.modifier.specifier",
                 "punctuation.terminator",
                 "keyword.control",
                 "constant.language",
+                "storage.modifier",
+                "entity.name.function.constructor.cpp",
                 // C++ & JS
                 "keyword.operator.arithmetic",
                 "keyword.operator.bitwise",
@@ -133,6 +149,7 @@
             }
         },
         {
+            // comments
             "scope": [
                 "comment",
             ],
@@ -141,6 +158,7 @@
             }
         },
         {
+            // strings
             "scope": [
                 "string.quoted",
             ],
@@ -149,19 +167,26 @@
             }
         },
         {
+            // attributes 
+            // - [derive(Debug)]
+            // - @Service
             "scope": "meta.attribute",
             "settings": {
                 "foreground": "#d4d4d4",
             }
         },
         {
+            // functions & structs declaration
+            // non-primitive types
             "scope": [
                 "entity.name.type.struct",
                 "entity.name.type.class",
                 "entity.name.type.rust",
-                "meta.function.definition",
                 // C++
                 "entity.name.function.definition.cpp",
+                "entity.name.type.parameter.cpp",
+                "entity.name.type.cpp",
+                "support.type.posix-reserved.c",
                 // JS(TS)
                 "meta.definition.function",
                 "meta.definition.method",
@@ -176,6 +201,7 @@
             }
         },
         {
+            // numbers
             "scope": [
                 "constant.numeric.decimal",
                 // JSON
@@ -186,16 +212,14 @@
             }
         },
         {
-            "scope": "entity.name.namespace.cpp",
-            "settings": {
-                "foreground": "#ba7d69"
-            }
-        },
-        {
+            // module / namespace
             "scope": [
                 "entity.name.namespace",
                 // C++
                 "string.quoted.other.lt-gt.include.cpp",
+                "entity.name.scope-resolution.cpp",
+                "entity.name.scope-resolution.function.call.cpp",
+                "entity.name.scope-resolution.parameter.cpp",
                 "meta.preprocessor.include.cpp",
                 // MARKDOWN
                 "markup.underline.link.markdown",
@@ -214,6 +238,7 @@
             }
         },
         {
+            // function call
             "scope": [
                 "meta.function.call",
                 // C++
@@ -226,7 +251,7 @@
                 "string.other.link.description.markdown",
             ],
             "settings": {
-                "foreground": "#74c9e0",
+                "foreground": "#7cc2d5",
             }
         },
         {
@@ -236,7 +261,7 @@
             }
         },
         {
-            "scope": "entity.name.function.macro",
+            "scope": "entity.name.function.macro.rust",
             "settings": {
                 "foreground": "#6797ff"
             }
@@ -252,6 +277,7 @@
             }
         },
         {
+            // fields of structure
             "scope": [
                 // JS(TS)
                 "variable.other.property",
@@ -295,7 +321,6 @@
         },
     ],
     "semanticTokenColors": {
-        "formatSpecifier": "#e2d49c",
         "keyword.unsafe": "#E06C75",
         "variable.constant": "#7b97d2",
         "builtinType": "#d9a958",
@@ -317,11 +342,9 @@
         },
         "tomlTableKey": "#95acbd",
         "tomlArrayKey": "#95acbd",
-
         "*.mutable": {
             "fontStyle": "underline"
         },
-
         "function.injected": "#74c9e0",
         "struct.injected": "#de8373",
         "namespace.injected": "#70a9b9",
@@ -332,7 +355,6 @@
         "enumMember.injected": "#91a4d0",
         "enum.injected": "#6ec0d9",
         "typeAlias.injected": "#6ec0d9",
-
-        "*.injected": "#bbb"
+        "*.injected": "#bbb",
     }
 }
