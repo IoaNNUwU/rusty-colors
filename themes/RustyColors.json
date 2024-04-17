@@ -140,9 +140,14 @@
                 // C++ & JS
                 "keyword.operator.arithmetic",
                 "keyword.operator.bitwise",
+                "entity.name.function.operator.cpp",
+                "punctuation.separator.pointer-access.cpp",
                 // JS(TS)
                 "keyword.operator.",
                 "support.type.primitive.ts",
+                // GO
+                "keyword.function.go",
+                "keyword.package.go",
             ],
             "settings": {
                 "foreground": "#d9a958"
@@ -195,6 +200,9 @@
                 "support.type.property-name.table.toml",
                 // MARKDOWN
                 "heading",
+                // GO
+                "entity.name.function.go",
+                "entity.name.type.go"
             ],
             "settings": {
                 "foreground": "#de8373",
@@ -320,6 +328,7 @@
             }
         },
     ],
+    
     "semanticTokenColors": {
         "keyword.unsafe": "#E06C75",
         "variable.constant": "#7b97d2",
@@ -345,6 +354,8 @@
         "*.mutable": {
             "fontStyle": "underline"
         },
+        "function.static": "#b87162",
+        "macro": "#6797ff",
         "function.injected": "#74c9e0",
         "struct.injected": "#de8373",
         "namespace.injected": "#70a9b9",
@@ -356,5 +367,6 @@
         "enum.injected": "#6ec0d9",
         "typeAlias.injected": "#6ec0d9",
         "*.injected": "#bbb",
+        "decorator": "#D4D4D4"
     }
 }

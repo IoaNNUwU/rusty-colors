@@ -1,7 +1,7 @@
 {
     "name": "vscode-rusty-colors",
     "displayName": "Rusty Colors",
-    "description": "Dark theme inspired by old rusty factories, perfect to use with Rust language",
+    "description": "Dark theme with old rusty colors, perfect to use with Rust language",
     "version": "1.1.3",
     "publisher": "ioannuwu",
     "license": "MIT",
@@ -31,11 +31,6 @@
                 "label": "Rusty Colors",
                 "uiTheme": "vs-dark",
                 "path": "./themes/RustyColors.json"
-            },
-            {
-                "label": "Rusty Colors Light",
-                "uiTheme": "vs",
-                "path": "./themes/RustyColorsLight.json"
             }
         ]
     },
