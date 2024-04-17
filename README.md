@@ -47,7 +47,7 @@ Some useful textMateRules overrides you might like:
     "settings": { "foreground": "#5fc26e" }
 }
 
-// Make all punktuation & parenthesis bras
+// Make all punktuation & parenthesis yellow
 { 
     "scope": [ 
         "punctuation.brackets.round", "punctuation", 
