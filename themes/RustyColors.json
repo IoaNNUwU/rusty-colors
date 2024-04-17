@@ -184,6 +184,7 @@
             // functions & structs declaration
             // non-primitive types
             "scope": [
+                "meta.function.definition.rust",
                 "entity.name.type.struct",
                 "entity.name.type.class",
                 "entity.name.type.rust",
@@ -354,8 +355,8 @@
         "*.mutable": {
             "fontStyle": "underline"
         },
-        "function.static": "#b87162",
-        "macro": "#6797ff",
+        "function.static": "#cf7664",
+        // "macro": "#6797ff",
         "function.injected": "#74c9e0",
         "struct.injected": "#de8373",
         "namespace.injected": "#70a9b9",
