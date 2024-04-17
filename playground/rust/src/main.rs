@@ -26,12 +26,12 @@ fn quick_sort(arr: &mut [i32]) {
         return;
     }
 
-    let pivot = partition(arr);
+    let pivot = partition(arr).await;
     quick_sort(&mut arr[..pivot]);
     quick_sort(&mut arr[pivot+1..]);
 }
 
-fn partition(arr: &mut [i32]) -> usize {
+async fn partition(arr: &mut [i32]) -> usize {
     let pivot = arr[0];
     let mut i = 1;
 
