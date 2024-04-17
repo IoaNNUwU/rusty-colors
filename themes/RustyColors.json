@@ -184,7 +184,7 @@
             // functions & structs declaration
             // non-primitive types
             "scope": [
-                "meta.function.definition.rust",
+                "meta.function.definition",
                 "entity.name.type.struct",
                 "entity.name.type.class",
                 "entity.name.type.rust",
