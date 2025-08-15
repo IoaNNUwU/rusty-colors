@@ -97,7 +97,15 @@
                 "keyword.operator.arithmetic.cpp",
                 "meta.block.cpp",
                 // JS(TS)
-                "punctuation.accessor"
+                "punctuation.accessor",
+                "keyword.operator.type.annotation.ts",
+                // CSS
+                "meta.property-list.css",
+                // Python
+                "punctuation.definition.arguments",
+                "meta.function-call.arguments.python",
+                // Shell
+                "entity.name.command.shell",
             ],
             "settings": {
                 "foreground": "#bbb",
@@ -137,6 +145,7 @@
                 "constant.language",
                 "storage.modifier",
                 "entity.name.function.constructor.cpp",
+                "entity.name.function.preprocessor.c",
                 // C++ & JS
                 "keyword.operator.arithmetic",
                 "keyword.operator.bitwise",
@@ -145,9 +154,25 @@
                 // JS(TS)
                 "keyword.operator.",
                 "support.type.primitive.ts",
+                "punctuation.definition.template-expression",
+                // CSS
+                "meta.property-name.css",
+                "meta.property-list.css",
                 // GO
                 "keyword.function.go",
                 "keyword.package.go",
+                "keyword.go.mod",
+                "keyword.var.go",
+                "keyword.import.go",
+                "keyword.type.go",
+                "keyword.struct.go",
+                "keyword.interface.go",
+                // Python
+                "constant.character.format.placeholder",
+                "punctuation.section.function.begin.python",
+                // Shell
+                "punctuation.definition.subshell.single.shell",
+                "punctuation.definition.assignment",
             ],
             "settings": {
                 "foreground": "#d9a958"
@@ -166,6 +191,9 @@
             // strings
             "scope": [
                 "string.quoted",
+                // JS/TS
+                "punctuation.definition.string.template",
+                "string.template"
             ],
             "settings": {
                 "foreground": "#c2915f",
@@ -193,20 +221,45 @@
                 "entity.name.type.parameter.cpp",
                 "entity.name.type.cpp",
                 "support.type.posix-reserved.c",
+                "entity.name.function.member.cpp",
+                "entity.name.function.c",
                 // JS(TS)
                 "meta.definition.function",
                 "meta.definition.method",
                 "entity.name.tag",
+                "entity.name.type.ts",
+                // CSS
+                "entity.other.attribute-name.class.css",
                 // TOML
                 "support.type.property-name.table.toml",
                 // MARKDOWN
                 "heading",
                 // GO
                 "entity.name.function.go",
-                "entity.name.type.go"
+                "entity.name.type.go",
+                "entity.name.type.receiver.go",
+                // Proto
+                "entity.name.class.message.proto",
+                "entity.name.class.proto",
+                // Python
+                "entity.name.function.python",
+                // Shell
+                "entity.name.function.shell",
+                "keyword.command.batchfile",
             ],
             "settings": {
                 "foreground": "#de8373",
+            }
+        },
+        {
+            "scope": [
+                // Python
+                "support.variable.magic.python",
+                "support.function.magic.python",
+            ],
+            "settings": {
+                "foreground": "#c581c4",
+                "fontStyle": "italic"
             }
         },
         {
@@ -233,6 +286,8 @@
                 // MARKDOWN
                 "markup.underline.link.markdown",
                 "markup.underline.link.image.markdown",
+                // Go
+                "entity.name.package.go"
             ],
             "settings": {
                 "foreground": "#70a9b9"
@@ -258,19 +313,31 @@
                 // MARKDOWN
                 "string.other.link.title.markdown",
                 "string.other.link.description.markdown",
+                // Proto
+                "entity.name.function",
+                // Go
+                "support.function.go",
+                // Shell
+                "entity.name.command.shell",
             ],
             "settings": {
                 "foreground": "#7cc2d5",
             }
         },
         {
-            "scope": "entity.name.function.preprocessor.cpp",
+            "scope": [
+                "entity.name.function.preprocessor.cpp",
+                // CSS
+                "support.function.misc.css",
+            ],
             "settings": {
                 "foreground": "#7b97d2"
             }
         },
         {
-            "scope": "entity.name.function.macro.rust",
+            "scope": [
+                "entity.name.function.macro.rust",
+            ],
             "settings": {
                 "foreground": "#6797ff"
             }
@@ -279,7 +346,7 @@
             "scope": [
                 "variable.constant.other",
                 "constant.other.caps",
-                "variable.other.global.cpp"
+                "variable.other.global.cpp",
             ],
             "settings": {
                 "foreground": "#7b97d2"
@@ -292,12 +359,23 @@
                 "variable.other.property",
                 "support.variable.property",
                 "entity.other.attribute-name",
+                // CSS
+                "support.type.property-name.css",
                 // JSON
                 "support.type.property-name.json",
                 // TOML
                 "support.type.property-name.toml",
                 // MARKDOWN
                 "markup.inline.raw.string.markdown",
+                // Go
+                "string.unquoted.go.mod",
+                // Proto
+                "variable.other.proto",
+                "support.other.proto",
+                // Python
+                "meta.attribute.python",
+                // Shell
+                "variable.other."
             ],
             "settings": {
                 "foreground": "#95acbd"
@@ -307,6 +385,9 @@
             "scope": [
                 // JS(TS)
                 "variable.language.this.tsx",
+                // Python 
+                "variable.parameter.function.language.special.self.python",
+                "variable.language.special.self.python"
             ],
             "settings": {
                 "foreground": "#91a4d0"
@@ -368,6 +449,12 @@
         "enum.injected": "#6ec0d9",
         "typeAlias.injected": "#6ec0d9",
         "*.injected": "#bbb",
-        "decorator": "#D4D4D4"
+        "decorator": "#D4D4D4",
+
+        "type": "#de8373",
+
+        // JS
+        "function.declaration": "#de8373",
+        "method.declaration": "#de8373",
     }
 }

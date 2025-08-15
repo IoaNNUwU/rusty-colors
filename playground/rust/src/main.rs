@@ -52,4 +52,43 @@ fn print_formatted(s: &str) {
 }
 
 
+#[derive(Debug)]
+struct User {
+    name: String,
+    surname: String,
+    email: String,
+    age: u32,
+    phone_number: String,
+    address: String,
+    favorite_food: String,
+    favorite_color: String,
+}
+
+impl User {
+    fn new(name: String, surname: String, email: String, age: u32, phone_number: String, address: String, favorite_food: String, favorite_color: String) -> Self {
+        User {
+            name,
+            surname,
+            email,
+            age,
+            phone_number,
+            address,
+            favorite_food,
+            favorite_color,
+        }
+    }
+
+    fn greet(&self) {
+        println!("Hello, {} {}!", self.name, self.surname);
+    }
+
+    fn get_email(&self) -> &str {
+        &self.email
+    }
+
+    fn is_teenager(&self) -> bool {
+        self.age >= 13 && self.age <= 19
+    }
+}
+
 

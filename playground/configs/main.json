@@ -1,0 +1,57 @@
+{
+  "name": "John Doe",
+  "age": 30,
+  "height": 1.80,
+  "isAlive": true,
+  "address": {
+    "streetAddress": "21 2nd Street",
+    "city": "New York",
+    "state": "NY",
+    "postalCode": 10021
+  },
+  "phoneNumbers": [
+    {
+      "type": "home",
+      "number": 2125551234
+    },
+    {
+      "type": "office",
+      "number": 6465554567
+    }
+  ],
+  "children": [
+    {
+      "name": "Jane Doe",
+      "age": 10
+    },
+    {
+      "name": "Bob Doe",
+      "age": 15
+    }
+  ],
+  "spouse": {
+    "name": "Jane Doe",
+    "age": 30,
+    "height": 1.65,
+    "isAlive": true,
+    "address": {
+      "streetAddress": "21 3rd Street",
+      "city": "New York",
+      "state": "NY",
+      "postalCode": 10021
+    },
+    "phoneNumbers": [
+      {
+        "type": "home",
+        "number": 2125555678
+      },
+      {
+        "type": "office",
+        "number": 6465558901
+      }
+    ],
+    "children": [],
+    "spouse": null
+  }
+}
+

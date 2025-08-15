@@ -1,0 +1,65 @@
+[package]
+name = "rust_example"
+version = "0.1.0"
+
+[profile.dev]
+lto = true
+debug = true
+codegen-units = 1
+incremental = true
+debug-assertions = true
+overflow-checks = true
+[profile.dev.panic]
+unwind = true
+[profile.dev.package.my_crate]
+lto = false
+debug = false
+
+[profile.release]
+lto = true
+debug = false
+codegen-units = 1
+incremental = true
+debug-assertions = false
+overflow-checks = false
+[profile.release.panic]
+unwind = true
+[profile.release.package.my_crate]
+lto = false
+debug = false
+
+[target.x86_64-unknown-linux-gnu.panic]
+unwind = true
+[target.x86_64-unknown-linux-gnu.package.my_crate]
+lto = false
+debug = false
+
+[target.x86_64-pc-windows-msvc.panic]
+unwind = true
+[target.x86_64-pc-windows-msvc.package.my_crate]
+lto = false
+debug = false
+
+[target.aarch64-apple-ios.panic]
+unwind = true
+[target.aarch64-apple-ios.package.my_crate]
+lto = false
+debug = false
+
+[target.armv7-linux-androideabi.panic]
+unwind = true
+[target.armv7-linux-androideabi.package.my_crate]
+lto = false
+debug = false
+
+[target.i686-apple-darwin.panic]
+unwind = true
+[target.i686-apple-darwin.package.my_crate]
+lto = false
+debug = false
+
+[target.wasm32-unknown-unknown.panic]
+unwind = true
+[target.wasm32-unknown-unknown.package.my_crate]
+lto = false
+debug = false

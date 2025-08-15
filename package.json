@@ -2,7 +2,7 @@
     "name": "vscode-rusty-colors",
     "displayName": "Rusty Colors",
     "description": "Dark theme with old rusty colors, perfect to use with Rust language",
-    "version": "1.1.3",
+    "version": "1.2.0",
     "publisher": "ioannuwu",
     "license": "MIT",
     "galleryBanner": {
@@ -20,7 +20,6 @@
         "atom",
         "theme",
         "dark",
-        "light",
         "one dark",
         "rust",
         "color"

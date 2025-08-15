@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <!-- This is a comment -->
+    <empty/>
+    <boolean>true</boolean>
+    <integer>42</integer>
+    <decimal>3.14159</decimal>
+    <string>This is a string &lt; &gt; &amp; &quot; &apos;</string>
+    <array>
+        <element>first</element>
+        <element>second</element>
+        <subarray>
+            <deep>deep value</deep>
+        </subarray>
+    </array>
+    <object>
+        <key>value</key>
+        <another_key>another value</another_key>
+    </object>
+</root>

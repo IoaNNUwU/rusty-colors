@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .button {
+      background-color: #333;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hello, world!</h1>
+    <button class="button" onclick="alert('Button pressed!')">Click me</button>
+    <button class="button" onclick="document.querySelector('h1').textContent = 'Hello, JavaScript!'">Change text</button>
+    <button class="button" onclick="document.querySelector('h1').style.color = 'red'">Change color</button>
+    <button class="button" onclick="document.querySelector('h1').style.fontSize = '4rem'">Change font size</button>
+    <button class="button" onclick="createAlert()">Create alert</button>
+  </div>
+  <script>
+    function createAlert() {
+      const alertBox = document.createElement('div');
+      alertBox.textContent = 'This is an alert!';
+      alertBox.style.backgroundColor = 'red';
+      alertBox.style.color = 'white';
+      alertBox.style.padding = '1rem';
+      alertBox.style.marginTop = '1rem';
+      document.body.appendChild(alertBox);
+
+      setTimeout(() => {
+        alertBox.remove();
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
+

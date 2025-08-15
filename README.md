@@ -1,18 +1,20 @@
 # Rusty Colors
 
-VSCode theme consisting of calming soft colors. Main colors are inspired by Rusty Copper environments and include `Light Brown`, `Soft Red`, `Rusty Blue`, `Light Gray`.
+A VSCode theme with calm, soft colors.
 
-> This theme is a perfect fit for Rust language.
+- This theme is a perfect fit for Rust language.
 
-- Includes semantic highlighting & full support for `Rust`, `C++`, `JavaScript`, `TypeScript` and other languages listed below.
+- Includes semantic highlighting & full support for `Rust`, `C++`, `TypeScript` and other languages listed below.
 
 ![Preview](https://raw.githubusercontent.com/IoaNNUwU/rusty-colors/master/img/Example.png)
 
 Each language in this list has hand-crafted, fine-tuned support. Each language uses same colors for same things (functions, structs, keywords, etc. each have same color in each language).
 - Rust
-- C++
+- C, C++
 - JavaScript, TypeScript
-- JSON, TOML, HTML, MARKDOWN, XML
+- Go
+- Python
+- Json, TOML, HTML, Markdown, XML
 
 ## Customization
 
@@ -20,7 +22,7 @@ If you are using VSCode 1.12+ versions you can customize the colors to your liki
 
 To do so, open command palette and type `Open User Settings (JSON)`. In this file you can override colors of this theme by adding this at the end of your settings object:
 
-```js
+```json
 // file: settings.json
 {
     // your settings
@@ -40,14 +42,14 @@ To do so, open command palette and type `Open User Settings (JSON)`. In this fil
 ```
 
 Some useful textMateRules overrides you might like:
-```js
+```json
 // Make Strings green like comments (default strings are brown):
 {
     "scope": "string.quoted",
     "settings": { "foreground": "#5fc26e" }
 }
 
-// Make all punktuation & parenthesis yellow
+// Make all punctuation & parenthesis gold
 { 
     "scope": [ 
         "punctuation.brackets.round", "punctuation", 
@@ -66,4 +68,6 @@ More info [here](https://code.visualstudio.com/docs/getstarted/theme-color-refer
 
 ## Support
 
-You can request color tweaks at [GitHub](https://github.com/IoaNNUwU/rusty-colors.git). If you want to support another language using existing colors & templates from this theme, you can do it by submitting a PR. If the color is missing, you can discover what token it is by using `Developer: Inspect Editor Tokens and Scopes` and adding this token scope in PR at GitHub.
+You can request color tweaks at [GitHub](https://github.com/IoaNNUwU/rusty-colors.git). 
+
+If you want to support another language using existing colors & templates from this theme, you can do it by submitting a PR. If the color is missing, you can discover what token it is by using `Developer: Inspect Editor Tokens and Scopes` and adding this token scope in PR at GitHub.
