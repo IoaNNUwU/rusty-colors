@@ -101,3 +101,35 @@ const Counter = () => {
 };
 
 new Counter({ target: document.body });
+
+const http = require('http');
+const fs = require('fs');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/html');
+
+  const url = req.url;
+  if (url === '/about') {
+    res.end('<h1>About</h1><p>This is the about page.</p>');
+  } else if (url === '/contact') {
+    res.end('<h1>Contact</h1><p>This is the contact page.</p>');
+  } else {
+    fs.readFile('./index.html', (err, data) => {
+      if (err) {
+        console.error(err);
+        res.statusCode = 500;
+        res.end('Error');
+      } else {
+        res.end(data);
+      }
+    });
+  }
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});

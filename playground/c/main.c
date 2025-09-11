@@ -1,116 +1,95 @@
-#include <arpa/inet.h>
-#include <ctype.h>
-#include <dirent.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <netinet/in.h>
-#include <pthread.h>
-#include <regex.h>
-#include <stdbool.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#include <sys/socket.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <unistd.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <errno.h>
+#include <assert.h>
 
 #define PORT 8080
-#define BUFFER_SIZE 104857600
 
-struct request {
-    char *url;
-};
+// Structure to represent a linked list node
+typedef struct node {
+    int data;
+    struct node *next;
+} node;
 
-struct response {
-    char *data;
-    size_t len;
-};
+// Function to insert a node at the end of the linked list
+void insert_node(node **head, int data) {
+    node *new_node = (node *) malloc(sizeof(node));
+    new_node->data = data;
+    new_node->next = NULL;
 
-struct mime_type {
-    char *ext;
-    char *type;
-};
-
-struct server_config {
-    struct mime_type *mime_types;
-    size_t num_mime_types;
-};
-
-struct client_info {
-    int fd;
-    struct sockaddr_in addr;
-};
-
-struct server_state {
-    struct server_config config;
-};
-
-struct server_state *initialize_server();
-void free_server_state(struct server_state *state);
-void handle_client(struct client_info *client);
-void *handle_client_thread(void *arg);
-
-int main(int argc, char *argv[]) {
-    struct server_state *state = initialize_server();
-    int server_fd;
-    struct sockaddr_in server_addr;
-
-    // create server socket
-    if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
-        perror("socket failed");
-        exit(EXIT_FAILURE);
-    }
-
-    // config socket
-    server_addr.sin_family = AF_INET;
-    server_addr.sin_addr.s_addr = INADDR_ANY;
-    server_addr.sin_port = htons(PORT);
-
-    // bind socket to port
-    if (bind(server_fd, 
-            (struct sockaddr *)&server_addr, 
-            sizeof(server_addr)) < 0) {
-        perror("bind failed");
-        exit(EXIT_FAILURE);
-    }
-
-    // listen for connections
-    if (listen(server_fd, 10) < 0) {
-        perror("listen failed");
-        exit(EXIT_FAILURE);
-    }
-
-    printf("Server listening on port %d\n", PORT);
-    while (1) {
-        // client info
-        struct sockaddr_in client_addr;
-        socklen_t client_addr_len = sizeof(client_addr);
-        int *client_fd = malloc(sizeof(int));
-
-        // accept client connection
-        if ((*client_fd = accept(server_fd, 
-                                (struct sockaddr *)&client_addr, 
-                                &client_addr_len)) < 0) {
-            perror("accept failed");
-            continue;
+    if (*head == NULL) {
+        *head = new_node;
+    } else {
+        node *last_node = *head;
+        while (last_node->next != NULL) {
+            last_node = last_node->next;
         }
-
-        // create a new thread to handle client request
-        struct client_info *client_info = malloc(sizeof(struct client_info));
-        client_info->fd = *client_fd;
-        client_info->addr = client_addr;
-        pthread_t thread_id;
-        pthread_create(&thread_id, NULL, handle_client_thread, (void *)client_info);
-        pthread_detach(thread_id);
+        last_node->next = new_node;
     }
-
-    close(server_fd);
-    free_server_state(state);
-    return 0;
 }
 
-bool not_(bool b) {
-    return !b;
+// Function to print the linked list
+void print_list(node *head) {
+    while (head != NULL) {
+        printf("%d ", head->data);
+        head = head->next;
+    }
+    printf("\n");
+}
+
+int main() {
+    int sockfd, connfd;
+    struct sockaddr_in servaddr, cliaddr;
+    socklen_t clilen;
+    char buffer[256];
+
+    true;
+
+    // Create a linked list
+    node *head = NULL;
+    insert_node(&head, 1);
+    insert_node(&head, 2);
+    insert_node(&head, 3);
+    print_list(head);
+
+    sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    if (sockfd < 0) {
+        perror("socket creation failed");
+        exit(1);
+    }
+
+    memset(&servaddr, 0, sizeof(servaddr));
+    servaddr.sin_family = AF_INET;
+    servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+    servaddr.sin_port = htons(PORT);
+
+    if (bind(sockfd, (struct sockaddr *) &servaddr, sizeof(servaddr)) < 0) {
+        perror("bind failed");
+        exit(1);
+    }
+
+    if (listen(sockfd, 3) < 0) {
+        perror("listen failed");
+        exit(1);
+    }
+
+    clilen = sizeof(cliaddr);
+    connfd = accept(sockfd, (struct sockaddr *)&cliaddr, &clilen);
+    if (connfd < 0) {
+        perror("accept failed");
+        exit(1);
+    }
+
+    read(connfd, buffer, 256);
+    printf("%s\n", buffer);
+
+    char *response = "HTTP/1.1 200 OK\nContent-Length: 12\n\nHello, world!";
+    send(connfd, response, strlen(response), 0);
+
+    close(connfd);
+    close(sockfd);
+    return 0;
 }
 

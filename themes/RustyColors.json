@@ -70,7 +70,7 @@
     },
     "tokenColors": [
         {
-            // main text color
+            // main text color gray
             // - local variables
             // - common syntax {},()
             // - function arguments
@@ -88,14 +88,19 @@
                 "punctuation.section.block",
                 "punctuation.section.parameters",
                 "punctuation.section",
-                "punctuation.separator",
-                "keyword.operator.assignment.cpp",
                 "meta.bracket.square",
-                "keyword.operator.comparison.cpp",
                 "punctuation.definition.capture",
                 "punctuation.definition.parameters",
-                "keyword.operator.arithmetic.cpp",
                 "meta.block.cpp",
+                "punctuation.separator.namespace.access.cpp",
+                "meta.body.function.definition.cpp",
+                "meta.body.class.cpp",
+                "meta.parameter",
+                "punctuation.separator.namespace.access.cpp",
+                "punctuation.separator.initializers.cpp",
+                "punctuation.separator.colon.range-based.cpp",
+                "punctuation.separator.dot-access.cpp",
+                "punctuation.separator.delimiter.comma.template.argument.cpp",
                 // JS(TS)
                 "punctuation.accessor",
                 "keyword.operator.type.annotation.ts",
@@ -112,7 +117,17 @@
             }
         },
         {
-            // main keyword color
+            "scope": [
+                "entity.name.operator.cpp",
+            ],
+            "settings": {
+                "foreground": "#DE8373",
+                "fontStyle": "bold italic"
+            }
+        },
+
+        {
+            // main keyword color gold
             // - keywords
             // - important punctuation ;
             // - important operators + - = <
@@ -130,6 +145,7 @@
                 "entity.name.type.primitive",
                 "keyword.operator.borrow",
                 "storage.modifier.mut.rust",
+                "variable.language.super.rust",
                 // string escape characters
                 "constant.character.escape",
                 "string.quoted.byte.raw.rust",
@@ -144,13 +160,18 @@
                 "keyword.control",
                 "constant.language",
                 "storage.modifier",
-                "entity.name.function.constructor.cpp",
                 "entity.name.function.preprocessor.c",
+                "keyword.operator.assignment.cpp",
+                "keyword.operator.arithmetic.cpp",
+                "keyword.operator.comparison.cpp",
+                "storage.type.built-in.cpp",
                 // C++ & JS
                 "keyword.operator.arithmetic",
                 "keyword.operator.bitwise",
                 "entity.name.function.operator.cpp",
-                "punctuation.separator.pointer-access.cpp",
+                "punctuation.separator.pointer-access",
+                "punctuation.separator.delimiter.c",
+                "punctuation.separator.delimiter.comma.cpp",
                 // JS(TS)
                 "keyword.operator.",
                 "support.type.primitive.ts",
@@ -158,6 +179,11 @@
                 // CSS
                 "meta.property-name.css",
                 "meta.property-list.css",
+                "punctuation.definition.entity.css",
+                // HTML
+                "punctuation.separator.key-value.html",
+                // XML
+                "constant.character.entity.xml",
                 // GO
                 "keyword.function.go",
                 "keyword.package.go",
@@ -170,16 +196,22 @@
                 // Python
                 "constant.character.format.placeholder",
                 "punctuation.section.function.begin.python",
+                "punctuation.separator.colon.python",
                 // Shell
                 "punctuation.definition.subshell.single.shell",
                 "punctuation.definition.assignment",
+                "punctuation.separator.batchfile",
+                "punctuation.definition.variable.shell",
+                "variable.parameter.positional.shell",
+                "variable.language.special.shell",
+                "constant.other.option.shell",
             ],
             "settings": {
                 "foreground": "#d9a958"
             }
         },
         {
-            // comments
+            // comments green
             "scope": [
                 "comment",
             ],
@@ -188,7 +220,7 @@
             }
         },
         {
-            // strings
+            // strings text brown
             "scope": [
                 "string.quoted",
                 // JS/TS
@@ -219,19 +251,22 @@
                 // C++
                 "entity.name.function.definition.cpp",
                 "entity.name.type.parameter.cpp",
-                "entity.name.type.cpp",
                 "support.type.posix-reserved.c",
                 "entity.name.function.member.cpp",
-                "entity.name.function.c",
+                "meta.function.definition.parameters.c",
+                "meta.declaration.type.alias.cpp",
+                // "entity.name.type.cpp",
                 // JS(TS)
                 "meta.definition.function",
                 "meta.definition.method",
                 "entity.name.tag",
                 "entity.name.type.ts",
+                "entity.name.type.alias.ts",
                 // CSS
                 "entity.other.attribute-name.class.css",
                 // TOML
                 "support.type.property-name.table.toml",
+                "support.type.property-name.array.toml",
                 // MARKDOWN
                 "heading",
                 // GO
@@ -256,10 +291,12 @@
                 // Python
                 "support.variable.magic.python",
                 "support.function.magic.python",
+                // C++
+                "entity.name.function.constructor.cpp",
             ],
             "settings": {
-                "foreground": "#c581c4",
-                "fontStyle": "italic"
+                "foreground": "#de8373",
+                "fontStyle": "bold italic"
             }
         },
         {
@@ -277,6 +314,7 @@
             // module / namespace
             "scope": [
                 "entity.name.namespace",
+                "entity.name.module.rust",
                 // C++
                 "string.quoted.other.lt-gt.include.cpp",
                 "entity.name.scope-resolution.cpp",
@@ -296,6 +334,7 @@
         {
             "scope": [
                 "entity.name.type.template.cpp",
+                "meta.template.call.cpp",
             ],
             "settings": {
                 "foreground": "#57bdbb",
@@ -308,17 +347,21 @@
                 // C++
                 "entity.name.function.call",
                 "entity.name.function.member.cpp",
-                // JS(TS)
+                // JS(TS) + C
                 "meta.function-call",
+                // CSS
+                "entity.other.attribute-name.pseudo-class.css",
                 // MARKDOWN
                 "string.other.link.title.markdown",
                 "string.other.link.description.markdown",
-                // Proto
-                "entity.name.function",
                 // Go
                 "support.function.go",
                 // Shell
                 "entity.name.command.shell",
+
+                // Proto - don't do this!!!
+                // this makes every function definition ever wrong color!!
+                // "entity.name.function",
             ],
             "settings": {
                 "foreground": "#7cc2d5",
@@ -347,6 +390,8 @@
                 "variable.constant.other",
                 "constant.other.caps",
                 "variable.other.global.cpp",
+                // C
+                "entity.name.function.preprocessor.c"
             ],
             "settings": {
                 "foreground": "#7b97d2"
@@ -375,7 +420,10 @@
                 // Python
                 "meta.attribute.python",
                 // Shell
-                "variable.other."
+                "variable.other.readwrite.batchfile",
+                "punctuation.definition.variable.batchfile",
+                "variable.other.normal.shell",
+                "variable.other.assignment.shell",
             ],
             "settings": {
                 "foreground": "#95acbd"
@@ -383,6 +431,8 @@
         },
         {
             "scope": [
+                // Rust
+                "variable.language.self.rust",
                 // JS(TS)
                 "variable.language.this.tsx",
                 // Python 
@@ -409,12 +459,30 @@
                 "fontStyle": "italic"
             }
         },
+        {
+            "scope": [
+                "entity.name.type.trait.rust",
+            ],
+            "settings": {
+                "foreground": "#82c67c",
+            }
+        },
+        {
+            "scope": [
+                "punctuation.definition.lifetime.rust",
+                "entity.name.type.lifetime.rust",
+            ],
+            "settings": {
+                "foreground": "#798fde",
+            }
+        },
     ],
     
     "semanticTokenColors": {
         "keyword.unsafe": "#E06C75",
         "variable.constant": "#7b97d2",
         "builtinType": "#d9a958",
+        "boolean": "#d9a958",
         "interface": "#82c67c",
         "enum": "#6ec0d9",
         "enumMember": "#91a4d0",

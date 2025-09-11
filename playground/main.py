@@ -64,3 +64,38 @@ async def async_example():
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(async_example())
+
+# Context manager example
+class FileManager:
+        def __init__(self, filename, mode):
+            self.filename = filename
+            self.mode = mode
+
+        def __enter__(self):
+            self.file = open(self.filename, self.mode)
+            return self.file
+
+        def __exit__(self, exc_type, exc_val, exc_tb):
+            self.file.close()
+
+with FileManager('test.txt', 'w') as file:
+    file.write('Hello, world!')
+
+def cool_syntax_tricks():
+    numbers = [1, 2, 3, 4, 5]
+    # List comprehension
+    even_numbers = [num for num in numbers if num % 2 == 0]
+    print(even_numbers)
+
+    # Unpacking
+    a, *b, c = numbers
+    print(a, b, c)
+
+    # Dictionary comprehension
+    squares = {num: num**2 for num in numbers}
+    print(squares)
+
+    # f-strings
+    name = "John"
+    age = 30
+    print(f"{name}'s age is {age}.")

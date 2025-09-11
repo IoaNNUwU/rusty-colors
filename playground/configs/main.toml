@@ -2,6 +2,12 @@
 name = "rust_example"
 version = "0.1.0"
 
+[[package]]
+
+[dependencies]
+rand = "0.8"
+tokio = { version = "1", features = ["rt", "macros", "tcp", "udp", "fs", "io-util", "io-std", "io-sys", "net", "process", "rt-threaded", "rt-multi-thread", "signal", "time", "parking", "parking-lot", "parking-io", "parking-mutex", "parking-std", "parking-async", "parking-io-std", "parking-io-async", "parking-io-async-std", "parking-io-std-async", "parking-io-std-async-std"] }
+
 [profile.dev]
 lto = true
 debug = true
@@ -9,8 +15,10 @@ codegen-units = 1
 incremental = true
 debug-assertions = true
 overflow-checks = true
+
 [profile.dev.panic]
 unwind = true
+
 [profile.dev.package.my_crate]
 lto = false
 debug = false
@@ -34,32 +42,43 @@ unwind = true
 lto = false
 debug = false
 
-[target.x86_64-pc-windows-msvc.panic]
-unwind = true
-[target.x86_64-pc-windows-msvc.package.my_crate]
-lto = false
-debug = false
+[[package.dependencies]]
+name = "serde"
+version = "1"
+features = [ "derive" ]
+optional = true
 
-[target.aarch64-apple-ios.panic]
-unwind = true
-[target.aarch64-apple-ios.package.my_crate]
-lto = false
-debug = false
+[[package.dependencies]]
+name = "serde_json"
+version = "1"
+features = [ "unstable" ]
+optional = true
 
-[target.armv7-linux-androideabi.panic]
-unwind = true
-[target.armv7-linux-androideabi.package.my_crate]
-lto = false
-debug = false
+[[package.dependencies]]
+name = "serde_derive"
+version = "1"
+features = [ "serde_default" ]
+optional = true
 
-[target.i686-apple-darwin.panic]
-unwind = true
-[target.i686-apple-darwin.package.my_crate]
-lto = false
-debug = false
+[[package.dependencies]]
+name = "serde_yaml"
+version = "0.8"
+features = [ "preserve_order" ]
+optional = true
 
-[target.wasm32-unknown-unknown.panic]
-unwind = true
-[target.wasm32-unknown-unknown.package.my_crate]
-lto = false
-debug = false
+[[package.dependencies]]
+name = "yansi"
+version = "0.5"
+optional = true
+
+[[package.dependencies]]
+name = "clap"
+version = "2.33"
+features = [ "suggestions", "color", "unstable", "derive" ]
+optional = true
+
+[[package.dependencies]]
+name = "clap_complete"
+version = "1.0"
+features = [ "bash", "zsh", "fish", "powershell", "elvish" ]
+optional = true

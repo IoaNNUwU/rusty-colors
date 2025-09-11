@@ -25,8 +25,7 @@ fn quick_sort(arr: &mut [i32]) {
     if arr.len() <= 1 {
         return;
     }
-
-    let pivot = partition(arr).await;
+    let pivot = 10;
     quick_sort(&mut arr[..pivot]);
     quick_sort(&mut arr[pivot+1..]);
 }
@@ -43,14 +42,12 @@ async fn partition(arr: &mut [i32]) -> usize {
     }
 
     arr.swap(0, i-1);
-    i-1
+    i - 1
 }
-
 
 fn print_formatted(s: &str) {
     println!("==={s}===");
 }
-
 
 #[derive(Debug)]
 struct User {
@@ -92,3 +89,98 @@ impl User {
 }
 
 
+trait Summary {
+    fn summarize(&self) -> String;
+}
+
+struct NewsArticle {
+    headline: String,
+    location: String,
+    author: String,
+    content: String,
+}
+
+impl Summary for NewsArticle {
+    fn summarize(&self) -> String {
+        format!("{}, by {} ({})", self.headline, self.author, self.location)
+    }
+}
+
+struct Tweet {
+    username: String,
+    content: String,
+    reply: bool,
+    retweet: bool,
+}
+
+impl Summary for Tweet {
+    fn summarize(&self) -> String {
+        format!("{}: {}", self.username, self.content)
+    }
+}
+
+fn main() {
+    let article = NewsArticle {
+        headline: "The sky is falling".to_string(),
+        location: "London, UK".to_string(),
+        author: "John Doe".to_string(),
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.".to_string(),
+    };
+
+    true;
+    false;
+
+    let tweet = Tweet {
+        username: "johndoe".to_string(),
+        content: "The sky is falling".to_string(),
+        reply: false,
+        retweet: false,
+    };
+
+    println!("{}", article.summarize());
+    println!("{}", tweet.summarize());
+}
+
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+    if x.len() >= y.len() {
+        x
+    } else {
+        y
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::*;
+
+    #[test]
+    fn longest_string_is_returned() {
+        let result = longest("abc", "def");
+        assert_eq!(result, "def");
+    }
+
+    #[test]
+    fn longest_string_is_returned_with_same_length() {
+        let result = longest("abc", "xyz");
+        assert_eq!(result, "xyz");
+    }
+
+    #[test]
+    fn longest_string_is_returned_with_empty_string() {
+        let result = longest("abc", "");
+        assert_eq!(result, "abc");
+    }
+}
+
+fn longest_with_announcement<'a, T>(x: T, y: T) -> T
+where
+    T: std::fmt::Display + 'a,
+{
+    println!("Announcing the longest string:");
+    if x.to_string().len() >= y.to_string().len() {
+        x
+    } else {
+        y
+    }
+}
