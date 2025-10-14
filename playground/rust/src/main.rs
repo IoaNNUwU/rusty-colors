@@ -12,6 +12,7 @@ fn main() {
         let n = stream.read(&mut buffer).unwrap();
 
         let get = b"GET / HTTP/1.1\r\n";
+        
         if n >= get.len() && &buffer[..get.len()] == get {
             let response = b"HTTP/1.1 200 OK\r\n\r\nHello, world!";
             stream.write(response).unwrap();
@@ -130,6 +131,17 @@ fn main() {
     true;
     false;
 
+    enum MyEnum {
+        One, Two,
+    }
+
+    let what = Some(1);
+
+    match what {
+        Some(n) => println!("{n}"),
+        None => println!(""),
+    }
+
     let tweet = Tweet {
         username: "johndoe".to_string(),
         content: "The sky is falling".to_string(),
@@ -182,5 +194,53 @@ where
         x
     } else {
         y
+    }
+}
+
+macro_rules! greet {
+    ($name:expr, $greeting:expr) => {
+        let name = $name;
+        let greeting = $greeting;
+        println!("{} {}, {}!", greeting, name);
+    }
+}
+
+trait Container {
+    type E;
+    fn empty(&self) -> bool;
+    fn insert(&mut self, elem: Self::E);
+    fn pop(&mut self) -> Option<Self::E>;
+}
+
+trait SomeTrait {
+    type AssocTy;
+}
+impl std::ops::Deref for OtherStruct {
+    type Target = SomeStruct;
+}
+
+struct Vector<T> {
+    data: Vec<T>,
+}
+
+impl<T> Vector<T> {
+    fn new() -> Self {
+        Vector { data: Vec::new() }
+    }
+
+    fn push(&mut self, elem: T) {
+        self.data.push(elem);
+    }
+
+    fn pop(&mut self) -> Option<T> {
+        self.data.pop()
+    }
+
+    fn len(&self) -> usize {
+        self.data.len()
+    }
+
+    fn is_empty(&self) -> bool {
+        self.data.is_empty()
     }
 }

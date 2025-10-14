@@ -10,11 +10,12 @@ A VSCode theme with calm, soft colors.
 
 Each language in this list has hand-crafted, fine-tuned support. Each language uses same colors for same things (functions, structs, keywords, etc. each have same color in each language).
 - Rust
-- C, C++
+- C, C++, C#, Java
 - JavaScript, TypeScript
 - Go
 - Python
 - Json, TOML, HTML, Markdown, XML
+- Shell
 
 ## Customization
 
